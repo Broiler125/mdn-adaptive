@@ -1,0 +1,138 @@
+/* Базовые стили для всей страницы */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+h1, h2 {
+  font-family: "Times New Roman", Times, serif; /* Как на скриншоте у заголовков шрифт с засечками */
+}
+
+/* Контейнер */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column; /* Для телефонов колонкой */
+}
+
+/* Шапка */
+.header {
+  text-align: center;
+  padding: 15px;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Навигация */
+.nav {
+  background-color: #b06565; /* Красноватый цвет как на скрине */
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; /* Чтобы пункты переносились на мобилках */
+  gap: 15px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* Блок со статьями и боковой панелью */
+.section-and-aside {
+  display: flex;
+  flex-direction: column; /* По умолчанию друг под другом */
+  gap: 20px;
+}
+
+.content {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.article h2 {
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+}
+
+.first-paragraph {
+  text-indent: 20px; /* Красная строка */
+}
+
+/* Боковое меню */
+.sidebar {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.square-list {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+a {
+  color: #333; /* Обычные ссылки не синие, чтобы было похоже на исходник */
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #000;
+}
+
+/* Подвал */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+
+/* --- Адаптивность для больших экранов --- */
+@media (min-width: 800px) {
+  .main-content {
+    flex-direction: row-reverse; /* Меню уходит влево, контент вправо */
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .nav {
+    width: 200px;
+    margin-bottom: 0;
+  }
+
+  .nav ul {
+    flex-direction: column; /* На компах меню вертикально */
+  }
+
+  .section-and-aside {
+    flex-direction: row; /* Текст и сайдбар встают в ряд */
+    flex: 1;
+  }
+
+  .content {
+    flex: 2; /* Текст занимает больше места */
+  }
+
+  .sidebar {
+    flex: 1; /* Сайдбар поменьше */
+  }
+}
